@@ -1,5 +1,5 @@
 # 使用するPythonのバージョンを指定
-FROM python:3.10-slim
+FROM python:3.12-slim
 
 # 作業ディレクトリを作成
 WORKDIR /app
