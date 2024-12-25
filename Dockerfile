@@ -13,6 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # アプリケーションのソースコードをコンテナにコピー
 COPY . /app/
 
+# ポート5000を公開
+EXPOSE 5000
+
 # アプリケーションを実行
 CMD ["python", "app.py"]
-EXPOSE 5000
