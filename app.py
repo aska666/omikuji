@@ -26,6 +26,7 @@ RESULTS = [
     # 自然
     "あめ(雨)", "かぜ(風)", "き(木)", "はな(花)", "やま(山)"
 ]
+result = ""
 
 @app.route('/')
 def index():
@@ -33,18 +34,17 @@ def index():
 
 @app.route('/draw', methods=['GET'])
 def draw():
+    global result
     result = random.choice(RESULTS)
     # 結果をランダムに選び、残りの結果リストの長さを一緒に返す
     return jsonify({"result": result, "remaining": RESULTS})
 
 @app.route('/reset', methods=['POST'])
 def reset():
+    global result
+    RESULTS.remove(result)
     global RESULTS
-    if len(RESULTS) > 0:
-        removed_result = RESULTS.pop()  # 末尾の結果を削除
-        return jsonify({"result": None, "remaining": RESULTS})
-    else:
-        return jsonify({"result": None, "remaining": RESULTS})
+    return jsonify({"result": result, "remaining": RESULTS})
 
 if __name__ == '__main__':
      app.run(host='0.0.0.0', port=5000)
