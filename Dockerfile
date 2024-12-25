@@ -4,11 +4,8 @@ FROM python:3.9-slim
 # 作業ディレクトリを作成
 WORKDIR /app
 
-# ローカルの requirements.txt をコンテナ内にコピー
-COPY requirements.txt /app/
-
-# 必要なパッケージをインストール
-RUN pip install --no-cache-dir -r requirements.txt
+COPY requirements.txt /bot/
+RUN pip install -r requirements.txt
 
 # アプリケーションのソースコードをコンテナにコピー
 COPY . /app/
