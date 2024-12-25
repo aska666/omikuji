@@ -15,3 +15,4 @@ COPY . /app/
 
 # アプリケーションを実行
 CMD ["python", "app.py"]
+EXPOSE 5000
