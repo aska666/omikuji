@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+.container p {
+    font-size: 50px;
+    font-weight:500;
+}
+
+.box img {
+    width: 70%; /* 画像の幅 */
+    height: auto; /* アスペクト比を維持 */
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+}
+
+.shake {
+    animation: shake 0.5s infinite;
+}
+
+.result {
+    font-size: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
